@@ -1,4 +1,5 @@
 import webapp2
+import cgi
 from google.appengine.api import mail
 
 
@@ -9,23 +10,24 @@ class MainPage(webapp2.RequestHandler):
         self.response.write('Hello, World!')
 
     def post(self):
-        mail.send_mail(sender="Salim Sobieroj <support@example.com>",
-                       to="Albert Johnson <daoud.clarke@gmail.com>",
-                       subject="Your account has been approved",
+        address = cgi.escape(self.request.get('EMAIL'))
+        mail.send_mail(sender="Daoud Clarke <daoud.clarke@gmail.com>",
+                       to='sasobieroj@yahoo.co.uk, daoud.clarke@gmail.com',
+                       subject="Contact request from %s" % address,
                        body="""
-Dear Albert:
+Hi Salim,
 
-Your example.com account has been approved.  You can now visit
-http://www.example.com/ and sign in using your Google Account to
-access new features.
+You have a contact request from:
 
-Please let us know if you have any questions.
+%s
 
-The example.com Team
-""")
+Love,
+
+Daoud
+""" % address)
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('Hello, World!')
+        self.response.write('Thanks! Someone will be in touch shortly.')
 
 application = webapp2.WSGIApplication([
-        ('/', MainPage),
+        ('/email.py', MainPage),
         ], debug=True)
