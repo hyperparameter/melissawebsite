@@ -7,16 +7,32 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <style type="text/css">
+      html {
+        background: url(img/groceries.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
       body {
         padding-top: 20px;
         padding-bottom: 40px;
         font-size: 12pt;
+        background: none;
       }
 
+      .logo {
+        font-family: 'Pacifico', cursive;
+        font-size: 120px;
+      }
+      
       p, ul, li {
         font-family: verdana;
       }
@@ -34,14 +50,11 @@
       .jumbotron {
         margin: 30px 0 0 0;
         text-align: center;
+        background-color: #fafafa;
       }
       .jumbotron h1 {
         font-size: 72px;
         line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 7px 15px;
       }
 
       /* Supporting marketing content */
@@ -78,29 +91,27 @@
   </head>
 
   <body>
-
-    <div class="container-narrow">
-
-
-      <div class="row-fluid jumbotron">
+    <div class="container">
+      <div class="jumbotron">
+	<h1 class="logo">Melissa</h1>
         <h1><b>Shop for groceries by phone</b></h1>
         <h3>We do your supermarket shop for you</h2>
         <br><br>
         <div id="mc_embed_signup">
-	    <form class="form-inline" action="phone.py" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-	    <input type="tel" value="" name="PHONE" placeholder="Phone number" class="input-lg input-large required telephone" id="mce-PHONE">
-	    <input type="submit" value="Tell me more" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-lg btn-success">
-	    <h2><br><b>£10 a month - First month free - No obligation</b></h2>
-	    <h3>Tesco - ASDA - Sainsburys - Morrisons - Waitrose</h3>
-	    <h3><i>We respect your privacy and will not share your phone number with anyone.</i></h3>
+	  <form class="form-inline" action="phone" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	    <div class="form-group">
+  	      <input type="tel" value="" name="PHONE" placeholder="Phone number" class="form-control input-lg input-large required telephone" id="mce-PHONE">
+	      <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-lg btn-success"><b>Call me</b></button>
+	      <h3>We will call you back between 9am and 5pm Monday to Friday</h3>
+	      <h2><br><b>First month free</b></h2>
+	      <h3>Tesco &#8226; ASDA &#8226; Sainsburys &#8226; Morrisons &#8226; Waitrose</h3>
+	      <h3><b>We respect your privacy and will not share information without your consent</b></h3>
+	    </div>
 	  </form>
 	</div>
 	<!--End mc_embed_signup-->
 
       </div>
-      <hr>
-
-
     </div> <!-- /container -->
 
     <!-- Le javascript
