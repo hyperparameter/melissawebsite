@@ -12,6 +12,8 @@
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/intercooler.js"></script>
     <style type="text/css">
       html {
         background: url(img/groceries.jpg) no-repeat center center fixed;
@@ -101,7 +103,8 @@
 	  <form class="form-inline" action="phone" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 	    <div class="form-group">
   	      <input type="tel" value="" name="PHONE" placeholder="Phone number" class="form-control input-lg input-large required telephone" id="mce-PHONE">
-	      <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-lg btn-success"><b>Call me</b></button>
+	      <!-- <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-lg btn-success"><b>Call me</b></button> -->
+	      <button ic-post-to="/phone" id="mc-embedded-subscribe" class="button btn btn-lg btn-success"><b>Call me</b></button>
 	      <h3>We will call you back between 9am and 5pm Monday to Friday</h3>
 	      <h2><br><b>First month free</b></h2>
 	      <h3>Tesco &#8226; ASDA &#8226; Sainsburys &#8226; Morrisons &#8226; Waitrose</h3>
@@ -118,7 +121,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="js/jquery.js"></script>
     <!-- <script src="js/bootstrap.js"></script> -->
     <!-- <script src="/js/jqBootstrapValidation.js"></script> -->
     <!-- <script> -->
