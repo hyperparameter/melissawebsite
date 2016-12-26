@@ -90,6 +90,21 @@
 
     </script>
 
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '756493291164508'); // Insert your pixel ID here.
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+		   src="https://www.facebook.com/tr?id=756493291164508&ev=PageView&noscript=1"
+		   /></noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
   </head>
 
   <body>
@@ -104,7 +119,7 @@
 	    <div class="form-group">
   	      <input type="tel" value="" name="PHONE" placeholder="Phone number" class="form-control input-lg input-large required telephone" id="mce-PHONE">
 	      <!-- <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-lg btn-success"><b>Call me</b></button> -->
-	      <button ic-post-to="/phone" id="mc-embedded-subscribe" class="button btn btn-lg btn-success"><b>Call me</b></button>
+	      <button ic-post-to="/phone" id="signup" class="button btn btn-lg btn-success"><b>Call me</b></button>
 	      <h3>We will call you back between 9am and 5pm Monday to Friday</h3>
 	      <h2><br><b>First month free</b></h2>
 	      <h3>Tesco &#8226; ASDA &#8226; Sainsburys &#8226; Morrisons &#8226; Waitrose</h3>
@@ -126,14 +141,11 @@
     <!-- <script> -->
     <!--   $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } ); -->
     <!-- </script> -->
-    <script>
-      $(window).load(function() {
-        if (window.location.hash == "#thanks") {
-          $(".signup").hide();
-          $(".thanks").show();
-        }
+
+    <script type="text/javascript">
+      $('#signup').click(function() {
+        fbq('track', 'CompleteRegistration');
       });
     </script>
-
   </body>
 </html>
