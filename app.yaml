@@ -5,8 +5,8 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /email\.py
-  script: salimapp.application
+- url: /phone\.py
+  script: phone.application
 
 - url: /
   static_files: index.html

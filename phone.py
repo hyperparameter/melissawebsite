@@ -10,20 +10,12 @@ class MainPage(webapp2.RequestHandler):
         self.response.write('Hello, World!')
 
     def post(self):
-        address = cgi.escape(self.request.get('EMAIL'))
+        phone = cgi.escape(self.request.get('PHONE'))
         mail.send_mail(sender="Daoud Clarke <daoud.clarke@gmail.com>",
-                       to='sasobieroj@yahoo.co.uk, daoud.clarke@gmail.com',
-                       subject="Contact request from %s" % address,
+                       to='daoud.clarke@gmail.com',
+                       subject="Contact request from %s" % phone,
                        body="""
-Hi Salim,
-
-You have a contact request from:
-
-%s
-
-Love,
-
-Daoud
+Good news! you have a request from: %s
 """ % address)
         self.response.headers['Content-Type'] = 'text/plain'
         self.response.write('Thanks! Someone will be in touch shortly.')
